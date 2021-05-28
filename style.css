@@ -3,3 +3,107 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.scene {
+    position:relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(#a6d8ff, #fff, #fff);
+    overflow:hidden;
+
+}
+
+.dark .scene {
+    background: #222833;
+}
+
+.sun {
+    position: absolute;
+    top: 100px;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius:50%;
+    box-shadow: 0 0 50px #fff;
+    cursor: pointer;
+    transition: 0.1s;
+
+}
+.dark .sun {
+    left: 45%;
+    box-shadow: 0 0 0 #fff;
+}
+
+.dark .sun::before {
+     content: "";
+     position:absolute;
+     top:-20px;
+     left: 20px;
+     width:100%;
+     height: 100%;
+     background: #222833;
+     border-radius: 50%;
+   
+}
+
+.bg {
+   
+ 
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    height: 600px;
+    background-image: url('https://image.freepik.com/free-vector/city-hospital-building_74855-6301.jpg');
+    animation: animateBg 25s linear infinite;
+    background-size: 950px;
+    background-repeat:repeat-x;
+}
+@keyframes animateBg {
+    0%  {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1500px;
+    }
+}
+
+.car1 {
+    position: absolute;
+    left: -200px;
+    bottom: 30px;
+    max-width: 200px;
+    z-index: 9;
+    animation: car1 5s linear infinite;
+    }
+    @keyframes car1 {
+
+        0% {
+            transform: translateX(0px) rotateY(180deg);
+        }
+        90%,100% {
+
+            transform: translateX(calc(100vw  +  200px)) rotateY(180deg);
+        }
+    }
+
+    .car2 {
+        position: absolute;
+        right: -800px;
+        bottom: 7px;
+        max-width: 200px;
+        z-index: 10;
+        animation: car2 12s linear infinite;
+        }
+        @keyframes car2 {
+    
+            0% {
+                transform: translate(0px);
+            }
+            90%,100% {
+    
+                transform: translate(calc(-100vw + -800px));
+            }
+        }
+
